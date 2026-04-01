@@ -1,0 +1,198 @@
+---
+title: "Análisis Datos Students | Varhulik & Loncarica "
+format: html
+author: "Melina Ayelen Varhulik & Maria Trinidad Loncarica"
+date: 2026-03-01
+lang: es
+---
+
+# Análisis: *Students Habits Performance*
+
+| En el presente trabajo se llevara a cabo un analisis del conjunto de datos *"student_habits_performance.csv"* , el cual contiene información detallada sobre los habitos de mas de 800 alumnos universitarios.
+
+### Nuestra Hipotesis:
+
+| *Los habitos de la vida de los estudiantes ( horas de estudio, sueño, uso de redes sociales y salud mental, etc... ) tienen un impacto significativo en su rendimiento academico ( exam_score ).* 
+
+------------------------------------------------------------------------
+
+```{r}
+#Cargar los datos 
+library(readr)
+install.packages("tidyverse")
+library(tidyverse)
+
+StudentsHabits <- read_delim("student_habits_performance.csv", delim = ",")
+```
+
+#### 1. ¿Las horas de estudio diarias se relacionan con el puntaje del examen?
+
+```{r}
+library(tidyverse)
+
+StudentsHabits %>%
+  ggplot(aes(x = study_hours_per_day, y = exam_score)) +
+  geom_point(alpha = 0.4, color = "steelblue") +
+  geom_smooth(method = "lm", color = "red", se = TRUE) +
+  labs(
+    title = "Horas de Estudio vs Puntaje del Examen",
+    x = "Horas de estudio por día",
+    y = "Puntaje del examen"
+  ) +
+  theme_minimal()
+```
+
+-   *Qué muestra:*
+
+    -   Cada punto representa un estudiante. El eje X indica cuántas horas estudia por día y el eje Y su puntaje. La línea roja muestra la tendencia general.
+
+-   *Conclusión:*
+
+    -   Existe una *relación positiva*: a más horas de estudio, mayor puntaje. Es probablemente la variable con impacto más directo y visible en el rendimiento.
+
+#### 2. ¿El tiempo en redes sociales afecta negativamente el rendimiento?
+
+```{r}
+StudentsHabits %>%
+  mutate(redes_grupo = cut(social_media_hours,
+                           breaks = c(0, 1, 2, 3, Inf),
+                           labels = c("0-1h", "1-2h", "2-3h", "+3h"))) %>%
+  ggplot(aes(x = redes_grupo, y = exam_score, fill = redes_grupo)) +
+  geom_boxplot(alpha = 0.7) +
+  labs(
+    title = "Uso de Redes Sociales vs Puntaje del Examen",
+    x = "Horas en redes sociales por día",
+    y = "Puntaje del examen"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "none")
+
+```
+
+-   *Qué muestra:*
+
+    -   Divide a los estudiantes en 4 grupos según cuántas horas usan redes sociales. Cada caja muestra cómo se distribuyen los puntajes dentro de ese grupo.
+
+-   *Conclusión:*
+
+    -    *Mayor uso de redes sociales se asocia con peores puntajes*. La línea central de cada caja es la mediana (el puntaje "*típico*" de ese grupo).
+
+#### 3. ¿La calidad del sueño (horas dormidas) influye en el rendimiento?
+
+```{r}
+StudentsHabits %>%
+  mutate(sueño_grupo = cut(sleep_hours,
+                           breaks = c(0, 5, 7, 9, Inf),
+                           labels = c("Menos de 5h", "5-7h", "7-9h", "Más de 9h"))) %>%
+  ggplot(aes(x = sueño_grupo, y = exam_score, fill = sueño_grupo)) +
+  geom_violin(alpha = 0.7) +
+  geom_boxplot(width = 0.1, fill = "white") +
+  labs(
+    title = "Horas de Sueño vs Puntaje del Examen",
+    x = "Horas de sueño",
+    y = "Puntaje del examen"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "none")
+
+```
+
+-   *Qué muestra:*
+
+    -   El ancho del violín indica cuántos estudiantes tienen ese puntaje. La caja interna muestra la mediana y el rango intercuartil. Se divide en 4 grupos según horas dormidas.
+
+-   *Conclusión:*
+
+    -   *Dormir bien se asocia con mejor rendimiento.* Los grupos de muy poco o mucho sueño muestran violines más anchos en puntajes bajos.
+
+#### 4. ¿La salud mental impacta en el rendimiento académico?
+
+```{r}
+StudentsHabits %>%
+  ggplot(aes(x = factor(mental_health_rating), y = exam_score, fill = factor(mental_health_rating))) +
+  geom_boxplot(alpha = 0.7) +
+  scale_fill_brewer(palette = "RdYlGn") +
+  labs(
+    title = "Rating de Salud Mental vs Puntaje del Examen",
+    x = "Rating de salud mental (1 = malo, 10 = excelente)",
+    y = "Puntaje del examen",
+    fill = "Rating"
+  ) +
+  theme_minimal()
+```
+
+-   *Qué muestra:*
+
+    -    Cada caja representa un nivel de salud mental (1 = muy mala, 10 = excelente). La paleta de colores va de rojo (malo) a verde (excelente).
+
+-   *Conclusión:*
+
+    -   Las cajas verdes (ratings altos) están más arriba que las rojas, se concluye que *mejor salud mental se asocia con mayor rendimiento académico*. Esto también puede reflejar que los estudiantes que rinden bien tienen menos estrés.
+
+#### 5. ¿La dieta y el ejercicio se relacionan con el rendimiento?
+
+```{r}
+StudentsHabits %>%
+  ggplot(aes(x = exercise_frequency, y = exam_score, color = diet_quality)) +
+  geom_jitter(alpha = 0.5, width = 0.2) +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(
+    title = "Frecuencia de Ejercicio y Calidad de Dieta vs Puntaje",
+    x = "Días de ejercicio por semana",
+    y = "Puntaje del examen",
+    color = "Calidad de dieta"
+  ) +
+  theme_minimal()
+```
+
+-   *Qué muestra:*
+
+    -   El eje X es la frecuencia de ejercicio semanal, el eje Y el puntaje. Cada color representa una calidad de dieta (Buena, Regular, Mala). Las líneas muestran la tendencia de cada grupo.
+
+-   *Conclusión:*
+
+    -   La línea del grupo "Good" (dieta buena) no está por encima de las demás ( pese a subir con el ejercicio ), se concluye, por ende, que *combinar buena dieta con ejercicio regular no favorece drasticamente el rendimiento.*
+
+        -   Permite comparar si el ejercicio ayuda por igual en todos los grupos de dieta.
+
+#### 6. ¿Los estudiantes con trabajo a tiempo parcial rinden menos?
+
+```{r}
+# Separar grupos
+con_trabajo    <- StudentsHabits %>% filter(part_time_job == "Yes") %>% pull(exam_score)
+sin_trabajo    <- StudentsHabits %>% filter(part_time_job == "No")  %>% pull(exam_score)
+
+# Test estadístico
+t.test(con_trabajo, sin_trabajo)
+
+# Gráfico
+StudentsHabits %>%
+  ggplot(aes(x = part_time_job, y = exam_score, fill = part_time_job)) +
+  geom_boxplot(alpha = 0.7) +
+  stat_summary(fun = mean, geom = "point", shape = 23,
+               size = 4, fill = "white") +
+  labs(
+    title = "¿Trabajar afecta el rendimiento académico?",
+    x = "Trabajo a tiempo parcial",
+    y = "Puntaje del examen"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+
+-   *Qué muestra:*
+
+    -   Compara los puntajes de estudiantes que trabajan vs los que no. El punto blanco dentro de la caja es el **promedio**.
+
+-   *Conclusión:*
+
+    -   El t-test da un `p-value < 0.05` y la caja del grupo "No" está más alta, se concluye que *trabajar mientras se estudia afecta negativamente el rendimiento*. Si no hay diferencia, el trabajo no sería un factor determinante.
+
+( + POSIBLES PREGUNTAS )
+
+¿El nivel educativo de los padres influye en el puntaje?
+
+¿Qué hábito impacta MÁS en el puntaje?
+
+\
+¿Cómo es el estudiante con alto y bajo puntaje?
