@@ -12,7 +12,7 @@ lang: es
 
 ### Nuestra Hipotesis:
 
-| *Los habitos de la vida de los estudiantes ( horas de estudio, sueño, uso de redes sociales y salud mental, etc... ) tienen un impacto significativo en su rendimiento academico ( exam_score ).* 
+| *Los habitos de la vida de los estudiantes ( horas de estudio, sueño, uso de redes sociales y salud mental, etc... ) tienen un impacto significativo en su rendimiento academico ( exam_score ).*
 
 ------------------------------------------------------------------------
 
@@ -75,7 +75,7 @@ StudentsHabits %>%
 
 -   *Conclusión:*
 
-    -    *Mayor uso de redes sociales se asocia con peores puntajes*. La línea central de cada caja es la mediana (el puntaje "*típico*" de ese grupo).
+    -   *Mayor uso de redes sociales se asocia con peores puntajes*. La línea central de cada caja es la mediana (el puntaje "*típico*" de ese grupo).
 
 #### 3. ¿La calidad del sueño (horas dormidas) influye en el rendimiento?
 
@@ -123,7 +123,7 @@ StudentsHabits %>%
 
 -   *Qué muestra:*
 
-    -    Cada caja representa un nivel de salud mental (1 = muy mala, 10 = excelente). La paleta de colores va de rojo (malo) a verde (excelente).
+    -   Cada caja representa un nivel de salud mental (1 = muy mala, 10 = excelente). La paleta de colores va de rojo (malo) a verde (excelente).
 
 -   *Conclusión:*
 
