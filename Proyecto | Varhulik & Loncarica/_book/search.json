@@ -1,0 +1,212 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Hábitos y Rendimiento Académico",
+    "section": "",
+    "text": "Hábitos y Rendimiento Académico\n\nUna lectura de datos sobre hábitos, bienestar y desempeño académico\nEste trabajo explora cómo las rutinas cotidianas de los estudiantes se relacionan con su desempeño académico, a partir del análisis del dataset Student Habits Performance.\n\nMelina Ayelen Varhulik · María Trinidad Loncarica\nUniversidad Nacional de San Martín\nCiencia de Datos II · Mayo 2026",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Hábitos y Rendimiento Académico</span>"
+    ]
+  },
+  {
+    "objectID": "nota_editorial.html",
+    "href": "nota_editorial.html",
+    "title": "Nota editorial",
+    "section": "",
+    "text": "Este trabajo fue realizado en el marco de la materia Ciencia de Datos II de la Universidad Nacional de San Martín.\n\nA través del análisis exploratorio del dataset Student Habits Performance buscamos comprender cómo distintos hábitos cotidianos se relacionan con el desempeño académico de estudiantes.\nEl objetivo no es establecer relaciones causales, sino identificar patrones que permitan pensar el rendimiento académico desde una perspectiva más amplia e integral.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Nota editorial</span>"
+    ]
+  },
+  {
+    "objectID": "introduccion.html",
+    "href": "introduccion.html",
+    "title": "Introducción",
+    "section": "",
+    "text": "El problema\nEl rendimiento académico es el resultado de múltiples factores que interactúan entre sí. Más allá de las capacidades individuales, existen hábitos cotidianos que pueden influir positiva o negativamente en el desempeño de los estudiantes.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Introducción</span>"
+    ]
+  },
+  {
+    "objectID": "introduccion.html#objetivo",
+    "href": "introduccion.html#objetivo",
+    "title": "Introducción",
+    "section": "Objetivo",
+    "text": "Objetivo\nEste trabajo busca explorar la relación entre distintos hábitos de estudio y estilo de vida con el puntaje obtenido en exámenes.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Introducción</span>"
+    ]
+  },
+  {
+    "objectID": "introduccion.html#variables-analizadas",
+    "href": "introduccion.html#variables-analizadas",
+    "title": "Introducción",
+    "section": "Variables analizadas",
+    "text": "Variables analizadas\n\nHoras de estudio\nHoras de sueño\nRedes sociales\nSalud mental\nDieta\nEjercicio físico\nTrabajo a tiempo parcial\n\n\nNuestro objetivo no es establecer causalidad, sino identificar patrones y asociaciones relevantes.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Introducción</span>"
+    ]
+  },
+  {
+    "objectID": "hallazgos.html",
+    "href": "hallazgos.html",
+    "title": "Hallazgos principales",
+    "section": "",
+    "text": "Horas de estudio\nLos datos muestran una tendencia ascendente entre las horas dedicadas al estudio y el puntaje obtenido en el examen. Si bien existe variabilidad entre estudiantes, quienes estudian más horas por día tienden a alcanzar mejores resultados académicos. Este resultado sugiere que la dedicación sostenida al estudio continúa siendo uno de los factores más relevantes para explicar el desempeño académico.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Hallazgos principales</span>"
+    ]
+  },
+  {
+    "objectID": "hallazgos.html#horas-de-estudio",
+    "href": "hallazgos.html#horas-de-estudio",
+    "title": "Hallazgos principales",
+    "section": "",
+    "text": "Las horas de estudio presentan la asociación positiva más clara con el rendimiento académico.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Hallazgos principales</span>"
+    ]
+  },
+  {
+    "objectID": "hallazgos.html#redes-sociales-y-rendimiento",
+    "href": "hallazgos.html#redes-sociales-y-rendimiento",
+    "title": "Hallazgos principales",
+    "section": "Redes sociales y rendimiento",
+    "text": "Redes sociales y rendimiento\n\nA medida que aumenta el tiempo dedicado a redes sociales, el rendimiento tiende a disminuir.\n\n\n\n\n\n\n\n\n\n\nSe observa una relación negativa entre el uso de redes sociales y el puntaje obtenido en el examen. Aunque la asociación no es absoluta, la tendencia general indica que los estudiantes con una mayor dedicación a estas plataformas suelen registrar resultados más bajos. Esto podría estar relacionado con una menor disponibilidad de tiempo para actividades académicas o con una mayor presencia de distracciones cotidianas.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Hallazgos principales</span>"
+    ]
+  },
+  {
+    "objectID": "hallazgos.html#sueño-y-rendimiento",
+    "href": "hallazgos.html#sueño-y-rendimiento",
+    "title": "Hallazgos principales",
+    "section": "Sueño y rendimiento",
+    "text": "Sueño y rendimiento\n\nDormir una cantidad adecuada de horas se asocia con mejores resultados académicos.\n\nplot_sleep_vs_exam(StudentsHabits)\n\n\n\n\n\n\n\n\n\nEl descanso aparece como un componente importante dentro de los hábitos estudiados. Los estudiantes que mantienen rutinas de sueño más saludables tienden a obtener puntajes superiores, lo que coincide con la evidencia existente sobre la importancia del sueño en procesos como la concentración, la memoria y el aprendizaje.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Hallazgos principales</span>"
+    ]
+  },
+  {
+    "objectID": "hallazgos.html#salud-mental",
+    "href": "hallazgos.html#salud-mental",
+    "title": "Hallazgos principales",
+    "section": "Salud mental",
+    "text": "Salud mental\n\nEl bienestar emocional muestra una relación positiva con el desempeño académico.\n\n\n\n\n\n\n\n\n\n\nLos resultados sugieren que los estudiantes con mejores indicadores de salud mental presentan, en promedio, un rendimiento académico más elevado. Si bien el análisis no permite establecer causalidad, la tendencia observada refuerza la idea de que el bienestar psicológico constituye una dimensión relevante para el desarrollo de hábitos de estudio efectivos.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Hallazgos principales</span>"
+    ]
+  },
+  {
+    "objectID": "hallazgos.html#ejercicio-físico",
+    "href": "hallazgos.html#ejercicio-físico",
+    "title": "Hallazgos principales",
+    "section": "Ejercicio físico",
+    "text": "Ejercicio físico\n\nLa actividad física regular parece asociarse con un mejor desempeño académico.\n\n\n\n\n\n\n\n\n\n\nLa práctica de ejercicio físico muestra una relación positiva, aunque moderada, con los puntajes obtenidos en los exámenes. Los estudiantes que realizan actividad física con mayor frecuencia suelen presentar mejores resultados, posiblemente debido a beneficios indirectos vinculados con la salud, el descanso y la gestión del estrés.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Hallazgos principales</span>"
+    ]
+  },
+  {
+    "objectID": "hallazgos.html#calidad-de-la-dieta",
+    "href": "hallazgos.html#calidad-de-la-dieta",
+    "title": "Hallazgos principales",
+    "section": "Calidad de la dieta",
+    "text": "Calidad de la dieta\n\nLos hábitos alimenticios saludables se relacionan con mejores resultados académicos.\n\n\n\n\n\n\n\n\n\n\nLa comparación entre grupos indica que una alimentación de mejor calidad se asocia con puntajes más altos. Aunque las diferencias no son extremas, la tendencia observada sugiere que la nutrición puede desempeñar un papel importante en el rendimiento académico a través de su influencia sobre la energía, la concentración y el bienestar general.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Hallazgos principales</span>"
+    ]
+  },
+  {
+    "objectID": "hallazgos.html#trabajo-a-tiempo-parcial",
+    "href": "hallazgos.html#trabajo-a-tiempo-parcial",
+    "title": "Hallazgos principales",
+    "section": "Trabajo a tiempo parcial",
+    "text": "Trabajo a tiempo parcial\n\nCompatibilizar estudio y trabajo puede representar un desafío para el rendimiento académico.\n\n\n\n\n\n\n\n\n\n\nLos estudiantes que trabajan mientras estudian enfrentan demandas adicionales sobre su tiempo y recursos. Los resultados muestran diferencias en el desempeño entre quienes poseen un empleo y quienes no, lo que sugiere que la disponibilidad de tiempo para el estudio y el descanso puede influir en los resultados académicos obtenidos.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Hallazgos principales</span>"
+    ]
+  },
+  {
+    "objectID": "hallazgos.html#una-mirada-general",
+    "href": "hallazgos.html#una-mirada-general",
+    "title": "Hallazgos principales",
+    "section": "Una mirada general",
+    "text": "Una mirada general\n\nNingún hábito explica por sí solo el rendimiento académico.\n\nEn conjunto, los hallazgos muestran que el desempeño académico surge de la interacción entre múltiples dimensiones de la vida cotidiana. Las horas de estudio aparecen como el factor más directamente asociado al puntaje obtenido, pero variables relacionadas con el bienestar físico y emocional —como el sueño, la actividad física, la alimentación y la salud mental— también presentan asociaciones relevantes. Estos resultados invitan a pensar el rendimiento académico como un fenómeno complejo, influido tanto por los hábitos de estudio como por las condiciones generales de vida de los estudiantes.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Hallazgos principales</span>"
+    ]
+  },
+  {
+    "objectID": "conclusiones.html",
+    "href": "conclusiones.html",
+    "title": "Conclusiones",
+    "section": "",
+    "text": "Hallazgos principales",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Conclusiones</span>"
+    ]
+  },
+  {
+    "objectID": "conclusiones.html#hallazgos-principales",
+    "href": "conclusiones.html#hallazgos-principales",
+    "title": "Conclusiones",
+    "section": "",
+    "text": "Más horas de estudio se asocian con mejores resultados.\nEl uso intensivo de redes sociales muestra una relación negativa con el rendimiento.\nEl sueño, la salud mental y la alimentación aparecen vinculados al desempeño académico.\nEl ejercicio físico presenta una asociación positiva moderada.\nCompatibilizar estudio y trabajo puede generar desafíos adicionales.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Conclusiones</span>"
+    ]
+  },
+  {
+    "objectID": "conclusiones.html#una-reflexión-como-estudiantes",
+    "href": "conclusiones.html#una-reflexión-como-estudiantes",
+    "title": "Conclusiones",
+    "section": "Una reflexión como estudiantes",
+    "text": "Una reflexión como estudiantes\n\nEn este proceso no solo analizamos datos. También observamos prácticas que forman parte de nuestra propia experiencia universitaria.\n\nComprendimos que el rendimiento académico no surge únicamente del esfuerzo individual, sino también de condiciones cotidianas que muchas veces pasan desapercibidas: el descanso, la organización del tiempo, el bienestar emocional y los hábitos que construimos día a día.\nComprender los datos también implica comprender a las personas que hay detrás de ellos.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Conclusiones</span>"
+    ]
+  },
+  {
+    "objectID": "fuentes.html",
+    "href": "fuentes.html",
+    "title": "Fuentes y metodología",
+    "section": "",
+    "text": "Dataset\nEl análisis se realizó a partir del dataset Student Habits Performance, que reúne información sobre hábitos cotidianos de estudiantes y su relación con el rendimiento académico.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Fuentes y metodología</span>"
+    ]
+  },
+  {
+    "objectID": "fuentes.html#variables-utilizadas",
+    "href": "fuentes.html#variables-utilizadas",
+    "title": "Fuentes y metodología",
+    "section": "Variables utilizadas",
+    "text": "Variables utilizadas\nSe trabajó con variables vinculadas a:\n\nHoras de estudio\nUso de redes sociales\nHoras de sueño\nSalud mental\nEjercicio físico\nCalidad de la dieta\nTrabajo a tiempo parcial\nPuntaje obtenido en examen",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Fuentes y metodología</span>"
+    ]
+  },
+  {
+    "objectID": "fuentes.html#herramientas",
+    "href": "fuentes.html#herramientas",
+    "title": "Fuentes y metodología",
+    "section": "Herramientas",
+    "text": "Herramientas\nEl procesamiento y la visualización de los datos se realizaron con R, utilizando principalmente las librerías tidyverse, gt y broom.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Fuentes y metodología</span>"
+    ]
+  },
+  {
+    "objectID": "fuentes.html#alcance-del-análisis",
+    "href": "fuentes.html#alcance-del-análisis",
+    "title": "Fuentes y metodología",
+    "section": "Alcance del análisis",
+    "text": "Alcance del análisis\nEste trabajo tiene un carácter exploratorio. Los resultados permiten identificar asociaciones entre variables, pero no establecer relaciones causales definitivas.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Fuentes y metodología</span>"
+    ]
+  }
+]

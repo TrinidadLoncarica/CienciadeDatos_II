@@ -1,0 +1,21 @@
+# Introducción
+
+## El problema
+
+El rendimiento académico es el resultado de múltiples factores que interactúan entre sí. Más allá de las capacidades individuales, existen hábitos cotidianos que pueden influir positiva o negativamente en el desempeño de los estudiantes.
+
+## Objetivo
+
+Este trabajo busca explorar la relación entre distintos hábitos de estudio y estilo de vida con el puntaje obtenido en exámenes.
+
+## Variables analizadas
+
+-   Horas de estudio
+-   Horas de sueño
+-   Redes sociales
+-   Salud mental
+-   Dieta
+-   Ejercicio físico
+-   Trabajo a tiempo parcial
+
+> Nuestro objetivo no es establecer causalidad, sino identificar patrones y asociaciones relevantes.

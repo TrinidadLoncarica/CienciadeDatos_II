@@ -1,0 +1,18 @@
+
+::: {.portada}
+
+# Hábitos y Rendimiento Académico
+
+### Una lectura de datos sobre hábitos, bienestar y desempeño académico
+
+Este trabajo explora cómo las rutinas cotidianas de los estudiantes se relacionan con su desempeño académico, a partir del análisis del dataset Student Habits Performance.
+
+::: {.portada-meta}
+Melina Ayelen Varhulik · María Trinidad Loncarica
+
+Universidad Nacional de San Martín
+
+Ciencia de Datos II · Mayo 2026
+:::
+
+:::

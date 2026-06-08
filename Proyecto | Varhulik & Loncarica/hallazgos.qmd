@@ -1,0 +1,96 @@
+```{r}
+source("R/traer_datos.R")
+source("R/graficos.R")
+source("R/tablas.R")
+library(tidyverse)
+library(ggplot2)
+library(gt)
+library(broom)
+
+StudentsHabits <- traer_datos()
+```
+
+# Hallazgos principales
+
+## Horas de estudio
+
+> Las horas de estudio presentan la asociación positiva más clara con el rendimiento académico.
+
+```{r}
+plot_estudio_score(StudentsHabits)
+```
+
+Los datos muestran una tendencia ascendente entre las horas dedicadas al estudio y el puntaje obtenido en el examen. Si bien existe variabilidad entre estudiantes, quienes estudian más horas por día tienden a alcanzar mejores resultados académicos. Este resultado sugiere que la dedicación sostenida al estudio continúa siendo uno de los factores más relevantes para explicar el desempeño académico.
+
+## Redes sociales y rendimiento
+
+> A medida que aumenta el tiempo dedicado a redes sociales, el rendimiento tiende a disminuir.
+
+```{r}
+plot_social_media_vs_exam(StudentsHabits)
+```
+
+Se observa una relación negativa entre el uso de redes sociales y el puntaje obtenido en el examen. Aunque la asociación no es absoluta, la tendencia general indica que los estudiantes con una mayor dedicación a estas plataformas suelen registrar resultados más bajos. Esto podría estar relacionado con una menor disponibilidad de tiempo para actividades académicas o con una mayor presencia de distracciones cotidianas.
+
+## Sueño y rendimiento
+
+> Dormir una cantidad adecuada de horas se asocia con mejores resultados académicos.
+
+plot_sleep_vs_exam(StudentsHabits)
+
+```{r}
+plot_sleep_vs_exam(StudentsHabits)
+
+```
+
+El descanso aparece como un componente importante dentro de los hábitos estudiados. Los estudiantes que mantienen rutinas de sueño más saludables tienden a obtener puntajes superiores, lo que coincide con la evidencia existente sobre la importancia del sueño en procesos como la concentración, la memoria y el aprendizaje.
+
+## Salud mental
+
+> El bienestar emocional muestra una relación positiva con el desempeño académico.
+
+```{r}
+plot_mental_health_vs_exam(StudentsHabits)
+
+```
+
+Los resultados sugieren que los estudiantes con mejores indicadores de salud mental presentan, en promedio, un rendimiento académico más elevado. Si bien el análisis no permite establecer causalidad, la tendencia observada refuerza la idea de que el bienestar psicológico constituye una dimensión relevante para el desarrollo de hábitos de estudio efectivos.
+
+## Ejercicio físico
+
+> La actividad física regular parece asociarse con un mejor desempeño académico.
+
+```{r}
+plot_ejercicio_dieta_vs_exam(StudentsHabits)
+
+```
+
+La práctica de ejercicio físico muestra una relación positiva, aunque moderada, con los puntajes obtenidos en los exámenes. Los estudiantes que realizan actividad física con mayor frecuencia suelen presentar mejores resultados, posiblemente debido a beneficios indirectos vinculados con la salud, el descanso y la gestión del estrés.
+
+## Calidad de la dieta
+
+> Los hábitos alimenticios saludables se relacionan con mejores resultados académicos.
+
+```{r}
+plot_diet_quality(StudentsHabits)
+
+```
+
+La comparación entre grupos indica que una alimentación de mejor calidad se asocia con puntajes más altos. Aunque las diferencias no son extremas, la tendencia observada sugiere que la nutrición puede desempeñar un papel importante en el rendimiento académico a través de su influencia sobre la energía, la concentración y el bienestar general.
+
+## Trabajo a tiempo parcial
+
+> Compatibilizar estudio y trabajo puede representar un desafío para el rendimiento académico.
+
+```{r}
+plot_trabajo_vs_exam(StudentsHabits)
+
+```
+
+Los estudiantes que trabajan mientras estudian enfrentan demandas adicionales sobre su tiempo y recursos. Los resultados muestran diferencias en el desempeño entre quienes poseen un empleo y quienes no, lo que sugiere que la disponibilidad de tiempo para el estudio y el descanso puede influir en los resultados académicos obtenidos.
+
+## Una mirada general
+
+> Ningún hábito explica por sí solo el rendimiento académico.
+
+En conjunto, **los hallazgos muestran que el desempeño académico surge de la interacción entre múltiples dimensiones de la vida cotidiana**. Las horas de estudio aparecen como el factor más directamente asociado al puntaje obtenido, pero variables relacionadas con el bienestar físico y emocional —como el sueño, la actividad física, la alimentación y la salud mental— también presentan asociaciones relevantes. Estos resultados invitan a pensar el rendimiento académico como un fenómeno complejo, influido tanto por los hábitos de estudio como por las condiciones generales de vida de los estudiantes.

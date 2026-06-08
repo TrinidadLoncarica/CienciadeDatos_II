@@ -1,0 +1,7 @@
+# Nota editorial
+
+>Este trabajo fue realizado en el marco de la materia Ciencia de Datos II de la Universidad Nacional de San Martín.
+
+A través del análisis exploratorio del dataset Student Habits Performance buscamos comprender cómo distintos hábitos cotidianos se relacionan con el desempeño académico de estudiantes.
+
+El objetivo no es establecer relaciones causales, sino identificar patrones que permitan pensar el rendimiento académico desde una perspectiva más amplia e integral.

@@ -5,16 +5,6 @@ author:
   - "Melina Ayelen Varhulik"
   - "María Trinidad Loncarica"
 date: "Mayo 2026"
-format:
-  revealjs:
-    theme: simple
-    css: styles.css
-    slide-number: true
-    transition: fade
-    progress: true
-    center: false
-    width: 1200
-    height: 700
 execute:
   echo: false
   warning: false
@@ -31,19 +21,7 @@ source("R/tablas.R")
 StudentsHabits <- traer_datos()
 ```
 
-::: seccion-label
-UNSAM · Análisis de Datos · Mayo 2026
-:::
 
-# Hábitos y Rendimiento Académico
-
-**Melina Ayelen Varhulik · María Trinidad Loncarica**
-
-::: firma
-Universidad Nacional de San Martín · Dataset: Student Habits Performance
-:::
-
-------------------------------------------------------------------------
 
 ## El problema
 

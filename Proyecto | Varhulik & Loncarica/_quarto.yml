@@ -1,0 +1,23 @@
+project:
+  type: book
+
+book:
+  chapters:
+    - index.qmd
+    - nota_editorial.qmd
+    - introduccion.qmd
+    - hallazgos.qmd
+    - conclusiones.qmd
+    - fuentes.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    number-sections: false
+
+execute:
+  echo: false
+  warning: false
+  message: false
