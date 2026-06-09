@@ -3,6 +3,7 @@ execute:
   echo: false
   warning: false
   message: false
+bibliography: references.bib
 ---
 
 ```{r}
@@ -14,8 +15,6 @@ source("R/graficos.R")
 source("R/tablas.R")
 StudentsHabits <- traer_datos()
 ```
-
-
 
 ## Interacciones
 
@@ -32,13 +31,11 @@ my_model |>
 
 El modelo que analiza interacciones agrega complejidad sin un beneficio tangible en cuanto a la explicación de la varanza observada. Si bien existe correlación negativa entre tener trabajo parcial y horas de estudio, la magnitud del efecto es ignroable en este caso. Con lo cual decidimos ignorar las mismas en nuestro análisis final.
 
-
 ```{r}
 my_model2 <- lm(exam_score ~ (sleep_hours+ study_hours_per_day+ social_media_hours+ netflix_hours+ part_time_job)
                ,
                data = StudentsHabits)
 ```
-
 
 ## Ejemplo de interacciones
 
@@ -48,8 +45,6 @@ StudentsHabits |>
   geom_point()+
   geom_smooth()
 ```
-
-
 
 ```{r}
 my_model2 |> 
@@ -65,6 +60,4 @@ summary(my_model2) -> my_summary
 
 El model explica el `r my_summary$adj.r.squared |> scales::percent(accuracy = 0.11)` de la varianza observada en los datos. (R cuadrado ajustado)
 
-
-
-
+Usamos el packete broom [@broom]
