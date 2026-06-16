@@ -1,21 +1,50 @@
 # Introducción
 
-## El problema
+## ¿De qué se trata este trabajo?
 
-El rendimiento académico es el resultado de múltiples factores que interactúan entre sí. Más allá de las capacidades individuales, existen hábitos cotidianos que pueden influir positiva o negativamente en el desempeño de los estudiantes.
+Cada vez que llega un período de exámenes, los estudiantes universitarios
+enfrentan una serie de decisiones que, aunque parecen pequeñas, pueden tener
+un impacto enorme en su rendimiento: ¿cuántas horas dedico a estudiar?,
+¿me conviene trasnochar o es mejor dormir bien?, ¿cuánto tiempo paso en
+redes sociales?, ¿cómo está mi salud mental?
 
-## Objetivo
+Estas preguntas tienen algo en común: todas hablan de *hábitos*. Y los hábitos,
+a diferencia de la inteligencia o el talento, son modificables. Por eso son
+tan importantes de estudiar.
 
-Este trabajo busca explorar la relación entre distintos hábitos de estudio y estilo de vida con el puntaje obtenido en exámenes.
+Este trabajo analiza el dataset *Student Habits Performance*, un conjunto de
+datos que registra información detallada sobre los hábitos cotidianos de
+estudiantes universitarios y su rendimiento académico medido a través del
+puntaje obtenido en exámenes. El objetivo es identificar qué variables tienen
+mayor impacto en ese puntaje y cómo se relacionan entre sí.
 
-## Variables analizadas
+## La hipótesis que guía el análisis
 
--   Horas de estudio
--   Horas de sueño
--   Redes sociales
--   Salud mental
--   Dieta
--   Ejercicio físico
--   Trabajo a tiempo parcial
+Antes de abrir cualquier tabla o trazar cualquier gráfico, planteamos una
+hipótesis de trabajo:
 
-> Nuestro objetivo no es establecer causalidad, sino identificar patrones y asociaciones relevantes.
+> *Los hábitos de vida de los estudiantes, como las horas de estudio, el
+> descanso, el uso de redes sociales y la salud mental, tienen un impacto
+> significativo en su rendimiento académico medido a través del puntaje
+> del examen.*
+
+Esta hipótesis no es nueva. Hay abundante evidencia en la literatura
+educativa que sugiere que el rendimiento académico no depende únicamente
+del esfuerzo intelectual, sino de una constelación de factores que incluyen
+el bienestar físico, emocional y social del estudiante. Lo que este trabajo
+intenta hacer es verificar esa idea con datos concretos.
+
+## Estructura del libro
+
+El libro está organizado de la siguiente manera. Primero presentamos el
+contexto teórico que fundamenta el análisis. Luego describimos la metodología
+utilizada y las variables del dataset. A continuación desarrollamos los
+hallazgos principales, organizados por pregunta de investigación. Después
+presentamos los modelos estadísticos construidos. Finalmente cerramos con
+un perfil del estudiante de alto rendimiento, las conclusiones generales
+y una reflexión sobre las limitaciones del trabajo y sus posibles
+extensiones futuras.
+
+El lector no necesita conocimientos previos de estadística para seguir
+el hilo del análisis. Cada concepto técnico que aparece está explicado
+en el momento en que se usa.

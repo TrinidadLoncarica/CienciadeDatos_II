@@ -1,7 +1,27 @@
 # Nota editorial
 
->Este trabajo fue realizado en el marco de la materia Ciencia de Datos II de la Universidad Nacional de San Martín.
+Este libro nació como un trabajo práctico para la materia Ciencia de Datos II
+de la Universidad Nacional de San Martín, pero creció hasta convertirse en algo
+más: un intento genuino de entender, con datos, algo que vivimos todos los días
+como estudiantes.
 
-A través del análisis exploratorio del dataset Student Habits Performance buscamos comprender cómo distintos hábitos cotidianos se relacionan con el desempeño académico de estudiantes.
+La pregunta que guió todo el análisis no fue técnica en su origen. Fue personal.
+¿Por qué algunos estudiantes rinden más que otros? ¿Es solo cuestión de cuánto
+estudian, o hay algo más detrás: cómo duermen, cómo se sienten, cuánto tiempo
+pasan en el teléfono? Esas preguntas, que cualquier estudiante se ha hecho alguna
+vez, fueron el punto de partida.
 
-El objetivo no es establecer relaciones causales, sino identificar patrones que permitan pensar el rendimiento académico desde una perspectiva más amplia e integral.
+El dataset *Student Habits Performance* nos dio la oportunidad de explorarlas con
+herramientas estadísticas. Pero desde el principio decidimos que los resultados
+no iban a quedar encerrados en tablas y coeficientes. Quisimos escribir un libro
+que cualquier persona pueda leer: una compañera, un profesor, alguien que nunca
+vio una regresión lineal en su vida.
+
+Por eso cada análisis viene acompañado de una explicación en lenguaje llano.
+Por eso los gráficos tienen contexto. Por eso este libro tiene capítulos y no
+solo chunks de código.
+
+Esperamos que quien lo lea encuentre algo útil, algo reconocible, o al menos
+algo que lo invite a pensar en sus propios hábitos.
+
+*Melina y Trinidad — San Martín, Mayo 2026*

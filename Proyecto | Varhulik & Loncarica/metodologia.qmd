@@ -1,0 +1,103 @@
+---
+title: "Metodología"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(gt)
+library(broom)
+source("R/tablas.R")
+source("R/traer_datos.R")
+source("R/graficos.R")
+StudentsHabits <- traer_datos()
+```
+````
+# Metodología
+
+## El dataset
+
+El análisis se basa en el dataset *Student Habits Performance*, que contiene
+registros de estudiantes universitarios con información sobre sus hábitos
+cotidianos y su rendimiento académico. Cada fila del dataset representa un
+estudiante y cada columna una variable diferente.
+
+El dataset fue cargado y procesado en el lenguaje de programación R,
+utilizando principalmente las librerías del ecosistema `tidyverse` para
+la manipulación de datos, `ggplot2` para las visualizaciones y `gt` para
+las tablas. Los modelos estadísticos fueron estimados con las funciones
+base de R y los resultados organizados con el paquete `broom`.
+
+## Las variables
+
+El dataset incluye una variable dependiente y once variables independientes.
+
+**Variable dependiente**
+
+La variable dependiente es `exam_score`, que representa el puntaje obtenido
+por el estudiante en el examen. Es una variable cuantitativa continua que
+funciona como indicador del rendimiento académico. Todos los análisis de
+este libro apuntan a entender qué factores explican las diferencias en esta
+variable entre estudiantes.
+
+**Variables independientes cuantitativas**
+
+Las variables cuantitativas registran cantidades numéricas que varían de
+estudiante en estudiante:
+
+- `study_hours_per_day`: horas de estudio por día
+- `social_media_hours`: horas dedicadas a redes sociales por día
+- `sleep_hours`: horas de sueño por noche
+- `attendance_percentage`: porcentaje de asistencia a clases
+- `mental_health_rating`: puntaje de salud mental del 1 al 10
+- `exercise_frequency`: días de ejercicio por semana
+- `netflix_hours`: horas de consumo de contenido en plataformas de streaming
+
+**Variables independientes categóricas**
+
+Las variables categóricas clasifican a los estudiantes en grupos:
+
+- `diet_quality`: calidad de la dieta (Buena, Regular, Mala)
+- `part_time_job`: si el estudiante tiene trabajo a tiempo parcial (Sí/No)
+- `parental_education_level`: nivel educativo de los padres (secundario,
+  universitario, posgrado)
+- `internet_quality`: calidad de la conexión a internet (Baja, Media, Alta)
+- `gender`: género del estudiante
+
+## El proceso de análisis
+
+El análisis siguió un camino progresivo que va de lo general a lo particular.
+
+**Análisis exploratorio.** En primer lugar se exploró la distribución de
+la variable dependiente y de cada variable independiente. Este paso permite
+entender la forma general de los datos antes de buscar relaciones entre
+variables.
+
+**Análisis bivariado.** Luego se analizó la relación entre cada variable
+independiente y el puntaje del examen por separado. Para las variables
+cuantitativas se usaron gráficos de dispersión y correlaciones de Pearson
+o Spearman. Para las variables categóricas se usaron gráficos de caja
+y pruebas estadísticas adecuadas.
+
+**Modelos de regresión.** Finalmente se estimaron modelos de regresión
+lineal múltiple para evaluar el efecto conjunto de todas las variables.
+Se probaron también modelos con interacciones para evaluar si el efecto
+de una variable depende del valor de otra.
+
+## Una nota sobre la causalidad
+
+Un punto importante que hay que aclarar antes de entrar en los resultados:
+este análisis es *observacional*, no experimental. Eso significa que podemos
+identificar asociaciones entre variables, pero no podemos afirmar con
+certeza que una cosa *causa* la otra.
+
+Cuando decimos que más horas de estudio se asocian con mejor rendimiento,
+no podemos descartar que haya otras variables detrás que expliquen esa
+relación. Un estudiante más motivado, por ejemplo, probablemente estudie
+más *y* tenga mejor salud mental *y* asista más a clases. En ese caso,
+la motivación sería la causa real y las otras variables serían efectos
+colaterales.
+
+Esto no invalida los resultados, pero sí exige precaución en la
+interpretación. A lo largo del libro vamos a ser cuidadosos en distinguir
+entre asociación y causalidad.

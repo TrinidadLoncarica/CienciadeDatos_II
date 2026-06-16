@@ -1,0 +1,134 @@
+---
+title: "Variables"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(gt)
+library(broom)
+source("R/tablas.R")
+source("R/traer_datos.R")
+source("R/graficos.R")
+StudentsHabits <- traer_datos()
+```
+
+
+# Las variables en detalle
+
+Antes de entrar en los hallazgos, vale la pena detenerse a conocer bien
+el dataset. En este capítulo describimos cada variable, mostramos su
+distribución y explicamos qué nos dice sobre la población estudiada.
+
+## El puntaje del examen
+
+La variable central del análisis es `exam_score`. Todo lo que hacemos en
+este libro apunta a entender qué factores se relacionan con ella.
+
+```{r}
+source("R/graficos.R")
+source("R/tablas.R")
+plot_exam_score(StudentsHabits)
+```
+
+```{r}
+plot_densidad_exam(StudentsHabits)
+```
+
+```{r}
+tabla_resumen_exam(StudentsHabits)
+```
+
+La distribución del puntaje del examen tiene una forma aproximadamente
+normal, lo que significa que la mayoría de los estudiantes se concentran
+alrededor de la media y hay proporciones similares de estudiantes con
+puntajes altos y bajos. Esto es una buena señal para el análisis estadístico,
+ya que muchos de los métodos que vamos a usar asumen este tipo de distribución.
+
+## Horas de estudio
+
+```{r}
+plot_densidad_study_hours(StudentsHabits)
+```
+
+Las horas de estudio por día muestran una distribución relativamente
+dispersa, lo que indica que hay mucha variabilidad entre estudiantes.
+Algunos estudian muy poco y otros dedican una cantidad considerable de
+horas al día. Esta variabilidad es útil para el análisis porque nos
+permite ver con claridad el efecto de esta variable sobre el rendimiento.
+
+## Horas en redes sociales
+
+```{r}
+plot_densidad_social_media(StudentsHabits)
+```
+
+El tiempo en redes sociales también varía bastante entre estudiantes.
+Es interesante notar que hay un grupo de estudiantes con un uso muy
+elevado, lo que va a ser relevante cuando analicemos el impacto de
+esta variable en el rendimiento.
+
+## Horas de sueño
+
+```{r}
+plot_densidad_sleep_hours(StudentsHabits)
+```
+
+La distribución de las horas de sueño muestra que la mayoría de los
+estudiantes duerme entre 6 y 8 horas, que es el rango recomendado
+por los especialistas en salud. Sin embargo hay una proporción no
+despreciable que duerme menos, lo que puede tener consecuencias
+sobre su rendimiento.
+
+## Salud mental
+
+```{r}
+plot_mental_health_rating(StudentsHabits)
+```
+
+El rating de salud mental va del 1 al 10 y su distribución es
+relativamente uniforme, lo que indica que el dataset incluye estudiantes
+con niveles muy distintos de bienestar emocional. Esto es valioso para
+el análisis porque nos permite explorar cómo diferentes estados de salud
+mental se relacionan con el rendimiento.
+
+## Calidad de la dieta
+
+```{r}
+tabla_diet_quality(StudentsHabits)
+plot_diet_quality(StudentsHabits)
+```
+
+La dieta está clasificada en tres categorías: buena, regular y mala.
+La distribución entre categorías permite comparar el rendimiento de
+grupos con hábitos alimentarios distintos.
+
+## Calidad de internet
+
+```{r}
+tabla_internet_quality(StudentsHabits)
+plot_internet_quality(StudentsHabits)
+```
+
+La calidad de la conexión a internet puede ser un factor relevante
+especialmente en contextos de estudio virtual o semipresencial, donde
+el acceso a materiales y clases depende de la conectividad.
+
+## Género
+
+```{r}
+tabla_gender(StudentsHabits)
+plot_gender(StudentsHabits)
+```
+
+## Nivel educativo de los padres
+
+```{r}
+tabla_parental_education(StudentsHabits)
+plot_parental_education(StudentsHabits)
+```
+
+El nivel educativo de los padres es una variable que suele aparecer
+en los estudios sobre rendimiento académico como indicador del capital
+cultural del hogar. Estudiantes cuyos padres tienen mayor nivel educativo
+tienden a tener más recursos simbólicos y materiales para el estudio.

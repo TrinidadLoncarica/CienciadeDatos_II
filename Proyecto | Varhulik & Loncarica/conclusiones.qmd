@@ -1,23 +1,67 @@
 # Conclusiones
 
-> El rendimiento académico no depende de un único factor, sino de la interacción entre múltiples hábitos cotidianos.
+## Lo que los datos confirmaron
 
-## Hallazgos principales
+Al comienzo de este trabajo planteamos una hipótesis: que los hábitos
+de vida de los estudiantes tienen un impacto significativo en su
+rendimiento académico. Los datos confirman esa hipótesis con claridad.
 
--   Más horas de estudio se asocian con mejores resultados.
+Pero más que confirmarla, el análisis permitió *matizarla* y *ordenarla*.
+No todos los hábitos impactan de la misma manera ni con la misma fuerza.
+Los datos nos permiten armar un ranking de importancia:
 
--   El uso intensivo de redes sociales muestra una relación negativa con el rendimiento.
+**Las horas de estudio** son, con diferencia, el factor más determinante.
+La correlación de 0.82 con el puntaje del examen es muy fuerte y se
+mantiene significativa incluso cuando se controlan otras variables en
+el modelo múltiple. Esto no sorprende, pero la magnitud del efecto
+es mayor de lo que muchos podrían intuir.
 
--   El sueño, la salud mental y la alimentación aparecen vinculados al desempeño académico.
+**La asistencia a clases** aparece como el segundo factor más importante
+en el modelo múltiple. Estar presente, participar, seguir el ritmo de
+la cursada tiene un efecto positivo sobre el rendimiento que va más
+allá del simple hecho de recibir información.
 
--   El ejercicio físico presenta una asociación positiva moderada.
+**Las redes sociales** muestran el efecto negativo más claro entre todas
+las variables. No es que usar redes sociales sea malo en sí mismo, sino
+que el tiempo excesivo dedicado a ellas compite con el tiempo de estudio
+y posiblemente también con el sueño.
 
--   Compatibilizar estudio y trabajo puede generar desafíos adicionales.
+**El sueño y la salud mental** aparecen como factores moderados pero
+consistentes. Su efecto es menor que el de las horas de estudio, pero
+real y significativo. Juntos contribuyen a configurar un estado de
+bienestar que facilita el aprendizaje.
 
-## Una reflexión como estudiantes
+**El ejercicio** tiene un efecto positivo pequeño pero estadísticamente
+significativo. La dieta, en cambio, no muestra un efecto directo claro
+sobre el rendimiento en este dataset.
 
-> En este proceso no solo analizamos datos. También observamos prácticas que forman parte de nuestra propia experiencia universitaria.
+**Trabajar a tiempo parcial** no mostró diferencias significativas en
+el rendimiento, lo que es un resultado sorprendente que merece atención.
 
-Comprendimos que el rendimiento académico no surge únicamente del esfuerzo individual, sino también de condiciones cotidianas que muchas veces pasan desapercibidas: el descanso, la organización del tiempo, el bienestar emocional y los hábitos que construimos día a día.
+## La respuesta a la pregunta central
 
-Comprender los datos también implica comprender a las personas que hay detrás de ellos.
+¿Qué hábitos importan realmente para el rendimiento académico?
+
+Los datos dicen: estudiar con regularidad, asistir a clases, dormir
+bien, cuidar la salud mental y limitar el tiempo en redes sociales.
+Este conjunto de hábitos, más que cualquier factor individual, es lo
+que distingue a los estudiantes de mejor rendimiento.
+
+No es una receta mágica ni un conjunto de comportamientos que garanticen
+el éxito. Pero sí es un patrón que los datos confirman de manera
+consistente y que tiene sentido desde la perspectiva del aprendizaje:
+el rendimiento académico mejora cuando el estudiante tiene tiempo,
+energía y bienestar emocional para dedicarse a aprender.
+
+## El valor del análisis de datos en educación
+
+Este trabajo también es, en cierta medida, una demostración del valor
+que tiene el análisis de datos aplicado a preguntas educativas. No
+porque los datos reemplacen la experiencia docente o la comprensión
+profunda del proceso de aprendizaje, sino porque la complementan.
+
+Los datos permiten ver patrones que serían invisibles a simple vista.
+Permiten cuantificar lo que de otra manera quedaría en el terreno de
+la intuición. Y permiten identificar con precisión dónde están las
+diferencias más importantes, lo que es el primer paso para pensar en
+cómo intervenir.

@@ -1,0 +1,76 @@
+---
+title: "Reflexiones"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(gt)
+library(broom)
+source("R/tablas.R")
+source("R/traer_datos.R")
+source("R/graficos.R")
+StudentsHabits <- traer_datos()
+```
+
+## Lo que este trabajo no pudo responder
+
+Todo análisis tiene límites, y es importante ser honestos sobre los
+propios. Este trabajo tiene al menos tres limitaciones importantes
+que vale la pena mencionar.
+
+**La causalidad sigue siendo una pregunta abierta.** Como mencionamos
+en el capítulo de metodología, este es un análisis observacional.
+Podemos describir asociaciones pero no establecer causalidades con
+certeza. Para hacer eso necesitaríamos un diseño experimental, lo
+que en el contexto educativo es difícil de implementar de manera ética.
+
+**El dataset tiene sus propios sesgos.** No sabemos exactamente cómo
+fue recolectado el dataset *Student Habits Performance* ni qué población
+representa con exactitud. Si la muestra tiene algún sesgo de selección
+(por ejemplo, si los estudiantes que respondieron son más motivados
+o tienen mejores hábitos que el promedio), los resultados podrían
+no generalizarse a todos los estudiantes universitarios.
+
+**Hay variables importantes que no están en el dataset.** La motivación
+intrínseca del estudiante, la calidad de la enseñanza, el apoyo
+institucional, las circunstancias socioeconómicas detalladas, la
+carga académica específica de cada carrera: todos estos factores
+pueden influir en el rendimiento y ninguno está capturado aquí.
+
+## Lo que podría hacerse en el futuro
+
+Este trabajo abre varias líneas posibles de análisis futuro.
+
+Sería interesante **repetir el análisis con datos propios** recolectados
+en el contexto específico de la UNSAM o de otra universidad argentina.
+Los patrones pueden variar según el contexto cultural, el sistema
+educativo y las características sociodemográficas de los estudiantes.
+
+También sería valioso **incorporar más variables contextuales**, como
+el tipo de carrera, el año de cursada, o medidas más detalladas del
+entorno familiar y socioeconómico.
+
+Desde el punto de vista metodológico, podrían explorarse **modelos
+más complejos** que capturen relaciones no lineales o que permitan
+analizar cómo los hábitos evolucionan a lo largo del tiempo.
+
+## Una reflexión personal
+
+Hacer este trabajo nos cambió la perspectiva. No solo porque aprendimos
+a usar herramientas estadísticas que antes no dominábamos, sino porque
+el proceso de analizar datos sobre algo que vivimos en carne propia
+como estudiantes nos hizo pensar de otra manera sobre nuestros propios
+hábitos.
+
+Hay algo poderoso en ver tus propias preguntas reflejadas en un gráfico.
+En confirmar con datos algo que solo intuías. En descubrir que una
+variable que creías importante no lo es tanto, o que algo que ignorabas
+tiene más peso del que esperabas.
+
+Esperamos que quien lea este libro salga con algo similar: no solo
+con información sobre hábitos y rendimiento, sino con una mayor
+curiosidad sobre el poder que tiene el análisis de datos para iluminar
+fenómenos humanos complejos.
+
+*Melina y Trinidad*
