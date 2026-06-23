@@ -1,5 +1,6 @@
 project:
   type: book
+  output-dir: ../docs
 
 book:
   chapters:
@@ -16,6 +17,8 @@ format:
     css: styles.css
     toc: true
     number-sections: false
+  pdf:
+    documentclass: scrreprt
 
 execute:
   echo: false

@@ -1,4 +1,5 @@
 ```{r}
+#| echo: false
 source("R/traer_datos.R")
 source("R/graficos.R")
 source("R/tablas.R")
@@ -6,7 +7,15 @@ library(tidyverse)
 library(ggplot2)
 library(gt)
 library(broom)
-
+library(ggthemes)
+theme_set(
+  ggthemes::theme_tufte() +
+    theme(
+      
+  plot.background   = element_rect(fill = "#f7f6f2", color = NA),
+  panel.background  = element_rect(fill = "#f7f6f2", color = NA)
+    )
+)  
 StudentsHabits <- traer_datos()
 ```
 

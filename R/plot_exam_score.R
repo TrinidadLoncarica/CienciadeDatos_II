@@ -6,6 +6,5 @@ plot_exam_score <- function(StudentsHabits) {
       title = "Distribución del puntaje del examen",
       x = "Exam score",
       y = "Frecuencia"
-    ) +
-    theme_minimal()
+    ) 
 }

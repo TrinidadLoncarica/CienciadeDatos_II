@@ -6,8 +6,7 @@ plot_exam_score <- function(datos) {
       title = "Distribución del puntaje del examen",
       x = "Exam score",
       y = "Frecuencia"
-    ) +
-    theme_minimal()
+    ) 
 }
 
 plot_estudio_score <- function(datos) {
@@ -19,8 +18,7 @@ plot_estudio_score <- function(datos) {
       title = "Horas de Estudio vs Puntaje del Examen",
       x = "Horas de estudio por día",
       y = "Puntaje del examen"
-    ) +
-    theme_minimal()
+    ) 
 }
 
 plot_densidad_exam <- function(datos) {
@@ -31,8 +29,7 @@ plot_densidad_exam <- function(datos) {
       title = "Densidad del puntaje del examen",
       x = "Exam score",
       y = "Densidad"
-    ) +
-    theme_minimal()
+    ) 
 }
 
 plot_densidad_study_hours <- function(datos) {
@@ -43,8 +40,7 @@ plot_densidad_study_hours <- function(datos) {
       title = "Distribución de las horas de estudio por día",
       x = "Horas de estudio",
       y = "Densidad"
-    ) +
-    theme_minimal()
+    ) 
 }
 
 plot_diet_quality <- function(datos) {
@@ -52,7 +48,7 @@ plot_diet_quality <- function(datos) {
     count(diet_quality) %>%
     ggplot(aes(x = diet_quality, y = n, fill = diet_quality)) +
     geom_col(alpha = 0.85, width = 0.65) +
-    theme_minimal(base_size = 13) +
+    
     theme(
       legend.position = "none",
       plot.title = element_text(face = "bold")
@@ -61,8 +57,7 @@ plot_diet_quality <- function(datos) {
       title = "Distribución de la calidad de dieta",
       x = "Calidad de dieta",
       y = "Frecuencia"
-    ) +
-    theme_minimal()
+    ) 
 }
 
 plot_internet_quality <- function(datos) {
@@ -74,8 +69,7 @@ plot_internet_quality <- function(datos) {
       title = "Distribución de la calidad de internet",
       x = "Calidad de internet",
       y = "Frecuencia"
-    ) +
-    theme_minimal()
+    ) 
 }
 
 plot_gender <- function(datos) {
@@ -92,8 +86,7 @@ plot_gender <- function(datos) {
       title = "Distribución por género",
       x = "Género",
       y = "Frecuencia"
-    ) +
-    theme_minimal()
+    ) 
 }
 
 plot_parental_education <- function(datos) {
@@ -110,8 +103,7 @@ plot_parental_education <- function(datos) {
       title = "Distribución del nivel educativo parental",
       x = "Nivel educativo parental",
       y = "Frecuencia"
-    ) +
-    theme_minimal()
+    ) 
 }
 
 plot_densidad_social_media <- function(datos) {
@@ -122,8 +114,7 @@ plot_densidad_social_media <- function(datos) {
       title = "Distribución de horas en redes sociales",
       x = "Horas en redes sociales",
       y = "Densidad"
-    ) +
-    theme_minimal()
+    ) 
 }
 
 plot_social_media_vs_exam <- function(datos) {
@@ -135,8 +126,7 @@ plot_social_media_vs_exam <- function(datos) {
       title = "Uso de Redes Sociales vs Puntaje del Examen",
       x = "Horas en redes sociales por día",
       y = "Puntaje del examen"
-    ) +
-    theme_minimal()
+    ) 
 }
 plot_densidad_sleep_hours <- function(datos) {
   datos %>%
@@ -146,8 +136,7 @@ plot_densidad_sleep_hours <- function(datos) {
       title = "Distribución de horas de sueño",
       x = "Horas de sueño",
       y = "Densidad"
-    ) +
-    theme_minimal()
+    ) 
 }
 
 plot_sleep_vs_exam <- function(datos) {
@@ -159,8 +148,7 @@ plot_sleep_vs_exam <- function(datos) {
       title = "Horas de Sueño vs Puntaje del Examen",
       x = "Horas de sueño por día",
       y = "Puntaje del examen"
-    ) +
-    theme_minimal()
+    ) 
 }
 
 plot_mental_health_rating <- function(datos) {
@@ -171,8 +159,7 @@ plot_mental_health_rating <- function(datos) {
       title = "Distribución del rating de salud mental",
       x = "Salud mental",
       y = "Frecuencia"
-    ) +
-    theme_minimal()
+    ) 
 }
 
 plot_mental_health_vs_exam <- function(datos) {
@@ -185,8 +172,7 @@ plot_mental_health_vs_exam <- function(datos) {
       x = "Rating de salud mental (1 = malo, 10 = excelente)",
       y = "Puntaje del examen",
       fill = "Rating"
-    ) +
-    theme_minimal()
+    ) 
 }
 
 plot_diet_quality_vs_exam <- function(datos) {
@@ -197,8 +183,7 @@ plot_diet_quality_vs_exam <- function(datos) {
       title = "Puntaje según calidad de dieta",
       x = "Calidad de dieta",
       y = "Puntaje del examen"
-    ) +
-    theme_minimal()
+    ) 
 }
 plot_ejercicio_dieta_vs_exam <- function(datos) {
   datos %>%
@@ -210,8 +195,7 @@ plot_ejercicio_dieta_vs_exam <- function(datos) {
       x = "Días de ejercicio por semana",
       y = "Puntaje del examen",
       color = "Calidad de dieta"
-    ) +
-    theme_minimal()
+    ) 
 }
 plot_trabajo_vs_exam <- function(datos) {
   datos %>%
@@ -224,7 +208,6 @@ plot_trabajo_vs_exam <- function(datos) {
       x = "Trabajo a tiempo parcial",
       y = "Puntaje del examen"
     ) +
-    theme_minimal() +
     theme(legend.position = "none")
 }
 plot_internet_quality_vs_exam <- function(datos) {
