@@ -1,0 +1,85 @@
+---
+title: "Perfiles"
+format: html
+---
+```{r}
+library(tidyverse)
+library(gt)
+library(broom)
+source("R/tablas.R")
+source("R/traer_datos.R")
+source("R/graficos.R")
+StudentsHabits <- traer_datos()
+```
+````
+# El perfil del estudiante
+
+## Dos tipos de estudiante
+
+Uno de los análisis más reveladores del trabajo fue la comparación entre
+los estudiantes del cuartil superior de rendimiento, a quienes llamamos
+"alto rendimiento", y el resto. Esta comparación no busca estigmatizar
+ni crear una división rígida entre buenos y malos estudiantes. Busca
+identificar patrones de hábitos que se asocian con mejores resultados.
+
+```{r}
+source("R/graficos.R")
+plot_perfil_rendimiento(StudentsHabits)
+```
+
+El gráfico compara los promedios de cuatro variables clave entre ambos
+grupos: horas de estudio, horas de sueño, horas en redes sociales y
+rating de salud mental.
+
+## Lo que diferencia a los estudiantes de alto rendimiento
+
+Las diferencias son claras y consistentes con todo lo que vimos a lo
+largo del análisis.
+
+**Estudian más.** Los estudiantes de alto rendimiento dedican en promedio
+más horas diarias al estudio que el resto. Esta es la diferencia más
+grande entre grupos y confirma que el tiempo de estudio es el factor
+más determinante del rendimiento.
+
+**Duermen mejor.** También tienen en promedio más horas de sueño, lo
+que refuerza la idea de que el descanso no es un lujo sino una parte
+integral de un buen desempeño académico.
+
+**Usan menos las redes sociales.** El grupo de alto rendimiento dedica
+menos tiempo a las redes sociales. Esto puede ser una causa o un efecto:
+quizás estudian más porque se distraen menos, o quizás al estar más
+enfocados en el estudio naturalmente pasan menos tiempo en el teléfono.
+
+**Tienen mejor salud mental.** El promedio de salud mental del grupo
+de alto rendimiento es superior. Nuevamente, la dirección de causalidad
+no es clara, pero la asociación es consistente.
+
+## Un retrato en palabras
+
+Si tuviéramos que describir al estudiante de alto rendimiento a partir
+de los datos, diríamos algo así:
+
+Es alguien que tiene una rutina relativamente estable. Dedica varias
+horas diarias al estudio, no necesariamente de manera heroica o sacrificada,
+sino como parte de su estructura cotidiana. Duerme lo suficiente porque
+entiende, consciente o inconscientemente, que el descanso forma parte
+del aprendizaje. No está desconectado de las redes sociales, pero no
+les dedica un tiempo desproporcionado. Y en general se siente bien
+emocionalmente, lo que le permite estar disponible para aprender.
+
+## Lo que los datos no dicen
+
+Es importante aclarar que este retrato es un promedio estadístico, no
+una prescripción ni un juicio de valor. Hay estudiantes que duermen poco
+y rinden muy bien, y estudiantes que siguen todos los hábitos "correctos"
+y tienen dificultades académicas. Los datos describen tendencias generales,
+no destinos individuales.
+
+Además, los datos no nos dicen nada sobre el contexto de vida de cada
+estudiante. Una persona que trabaja y estudia, que tiene responsabilidades
+familiares, que atraviesa una crisis personal, está en una situación
+completamente distinta a alguien que solo estudia. Comparar sus hábitos
+sin tener en cuenta ese contexto sería injusto e impreciso.
+
+Los datos son una herramienta para entender patrones. La interpretación
+humana y contextual es lo que les da sentido.

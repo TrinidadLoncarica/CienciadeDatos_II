@@ -7,8 +7,14 @@ book:
     - index.qmd
     - nota_editorial.qmd
     - introduccion.qmd
+    - contexto.qmd
+    - metodologia.qmd
+    - variables.qmd
     - hallazgos.qmd
+    - modelos.qmd
+    - perfiles.qmd
     - conclusiones.qmd
+    - reflexiones.qmd
     - fuentes.qmd
 
 format:

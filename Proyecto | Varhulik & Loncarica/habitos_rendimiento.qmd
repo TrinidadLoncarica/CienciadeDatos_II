@@ -21,8 +21,6 @@ source("R/tablas.R")
 StudentsHabits <- traer_datos()
 ```
 
-
-
 ## El problema
 
 ::: seccion-label
@@ -49,20 +47,20 @@ Metodología
 ::: {.column width="48%"}
 ### Hábitos académicos
 
--   `study_hours_per_day` — continua
--   `attendance_percentage` — continua
--   `part_time_job` — dicotómica
+- `study_hours_per_day` — continua
+- `attendance_percentage` — continua
+- `part_time_job` — dicotómica
 :::
 
 ::: {.column width="48%"}
 ### Hábitos de vida
 
--   `sleep_hours` — continua
--   `social_media_hours` — continua
--   `mental_health_rating` — continua
--   `exercise_frequency` — discreta
--   `diet_quality` — ordinal
--   `internet_quality` — ordinal
+- `sleep_hours` — continua
+- `social_media_hours` — continua
+- `mental_health_rating` — continua
+- `exercise_frequency` — discreta
+- `diet_quality` — ordinal
+- `internet_quality` — ordinal
 :::
 :::::
 

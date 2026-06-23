@@ -1,12 +1,14 @@
+
 ```{r}
+<<<<<<< HEAD
 #| echo: false
 source("R/traer_datos.R")
 source("R/graficos.R")
 source("R/tablas.R")
 library(tidyverse)
-library(ggplot2)
 library(gt)
 library(broom)
+
 library(ggthemes)
 theme_set(
   ggthemes::theme_tufte() +
@@ -16,90 +18,264 @@ theme_set(
   panel.background  = element_rect(fill = "#f7f6f2", color = NA)
     )
 )  
+
 StudentsHabits <- traer_datos()
 ```
+# Hallazgos
 
-# Hallazgos principales
+En este capítulo respondemos cada una de las preguntas que guiaron
+el análisis. Para cada pregunta presentamos el gráfico correspondiente,
+los resultados estadísticos y una interpretación en lenguaje accesible.
 
-## Horas de estudio
+## ¿Las horas de estudio se relacionan con el rendimiento?
 
-> Las horas de estudio presentan la asociación positiva más clara con el rendimiento académico.
+Esta es la pregunta más directa y también la que tiene la respuesta
+más contundente. Antes de ver los datos, la intuición ya sugería que
+estudiar más debería traducirse en mejores notas. Pero ¿cuánto más?
+¿La relación es lineal? ¿Es fuerte o débil?
 
 ```{r}
+source("R/graficos.R")
+source("R/tablas.R")
 plot_estudio_score(StudentsHabits)
 ```
 
-Los datos muestran una tendencia ascendente entre las horas dedicadas al estudio y el puntaje obtenido en el examen. Si bien existe variabilidad entre estudiantes, quienes estudian más horas por día tienden a alcanzar mejores resultados académicos. Este resultado sugiere que la dedicación sostenida al estudio continúa siendo uno de los factores más relevantes para explicar el desempeño académico.
+```{r}
+tabla_cor_study_exam(StudentsHabits)
+```
 
-## Redes sociales y rendimiento
+El gráfico de dispersión muestra una relación positiva muy clara entre
+las horas de estudio y el puntaje del examen. Cada punto representa un
+estudiante: su posición horizontal indica cuántas horas estudia por día
+y su posición vertical indica su puntaje. La línea roja es la tendencia
+general: sube de izquierda a derecha, lo que confirma que a más horas
+de estudio, mayor puntaje.
 
-> A medida que aumenta el tiempo dedicado a redes sociales, el rendimiento tiende a disminuir.
+Pero lo más importante no es la dirección de la relación sino su fuerza.
+La correlación entre ambas variables es de **r = 0.825**, lo que en
+términos estadísticos se considera una correlación fuerte. Esto significa
+que conociendo las horas de estudio de un estudiante podemos predecir
+bastante bien su puntaje. Además, el p-valor es menor a 0.001, lo que
+indica que esta relación no se debe al azar.
+
+De todas las variables analizadas en este trabajo, las horas de estudio
+son las que tienen la relación más fuerte con el rendimiento. Esto
+refuerza algo que parece obvio pero que los datos confirman con claridad:
+el tiempo dedicado al estudio es el factor más determinante del desempeño
+académico.
+
+## ¿El tiempo en redes sociales afecta el rendimiento?
+
+Si estudiar más ayuda a rendir mejor, ¿qué pasa con las actividades que
+compiten con el tiempo de estudio? Las redes sociales son probablemente
+el mayor competidor en la vida cotidiana de los estudiantes universitarios
+de hoy.
+
+```{r}
+plot_densidad_social_media(StudentsHabits)
+```
+
+```{r}
+tabla_resumen_social_media(StudentsHabits)
+```
 
 ```{r}
 plot_social_media_vs_exam(StudentsHabits)
 ```
 
-Se observa una relación negativa entre el uso de redes sociales y el puntaje obtenido en el examen. Aunque la asociación no es absoluta, la tendencia general indica que los estudiantes con una mayor dedicación a estas plataformas suelen registrar resultados más bajos. Esto podría estar relacionado con una menor disponibilidad de tiempo para actividades académicas o con una mayor presencia de distracciones cotidianas.
+```{r}
+tabla_coef_modelo_redes(StudentsHabits)
+tabla_metricas_modelo_redes(StudentsHabits)
+```
 
-## Sueño y rendimiento
+El gráfico muestra una tendencia negativa: a medida que aumentan las
+horas en redes sociales, el puntaje tiende a bajar. La línea roja de
+tendencia desciende de izquierda a derecha, lo opuesto a lo que vimos
+con las horas de estudio.
 
-> Dormir una cantidad adecuada de horas se asocia con mejores resultados académicos.
+El modelo de regresión confirma esta tendencia. El coeficiente de
+`social_media_hours` es negativo y estadísticamente significativo, lo
+que indica que por cada hora adicional en redes sociales se espera una
+caída en el puntaje del examen. Sin embargo, es importante notar que
+la magnitud de este efecto es menor que el de las horas de estudio.
 
-plot_sleep_vs_exam(StudentsHabits)
+Esto sugiere dos interpretaciones posibles. La primera es que las redes
+sociales tienen un efecto directo sobre el rendimiento, quizás porque
+fragmentan la atención y dificultan la concentración. La segunda es que
+el tiempo en redes sociales es simplemente tiempo que no se dedica a
+estudiar, y el efecto negativo viene de esa sustitución. Probablemente
+ambas cosas ocurren al mismo tiempo.
+
+## ¿El sueño influye en el rendimiento?
+
+El sueño es uno de los factores más subestimados en la vida universitaria.
+Es común que los estudiantes sacrifiquen horas de sueño para estudiar más,
+especialmente en períodos de exámenes. Pero ¿realmente vale la pena?
+
+```{r}
+plot_densidad_sleep_hours(StudentsHabits)
+```
+
+```{r}
+tabla_resumen_sleep_hours(StudentsHabits)
+```
 
 ```{r}
 plot_sleep_vs_exam(StudentsHabits)
-
 ```
 
-El descanso aparece como un componente importante dentro de los hábitos estudiados. Los estudiantes que mantienen rutinas de sueño más saludables tienden a obtener puntajes superiores, lo que coincide con la evidencia existente sobre la importancia del sueño en procesos como la concentración, la memoria y el aprendizaje.
+```{r}
+tabla_coef_modelo_sueno(StudentsHabits)
+tabla_metricas_modelo_sueno(StudentsHabits)
+```
 
-## Salud mental
+Los datos muestran una relación positiva entre las horas de sueño y
+el puntaje del examen. Los estudiantes que duermen más tienden a obtener
+mejores resultados. Aunque esta relación es menos fuerte que la de las
+horas de estudio, es estadísticamente significativa y tiene una dirección
+clara.
 
-> El bienestar emocional muestra una relación positiva con el desempeño académico.
+Este resultado es coherente con lo que la neurociencia del sueño ha
+documentado: dormir bien es esencial para la consolidación de la memoria
+y para mantener las funciones cognitivas en buen estado. Sacrificar sueño
+para estudiar más puede ser contraproducente si la falta de descanso
+deteriora la capacidad de retener y procesar lo estudiado.
+
+## ¿La salud mental impacta en el rendimiento?
+
+La salud mental es un tema que ha ganado mucha visibilidad en los últimos
+años, especialmente en el contexto universitario. Pero más allá del debate
+público, ¿qué dicen los datos?
+
+```{r}
+plot_mental_health_rating(StudentsHabits)
+```
+
+```{r}
+tabla_resumen_mental_health(StudentsHabits)
+```
 
 ```{r}
 plot_mental_health_vs_exam(StudentsHabits)
-
 ```
 
-Los resultados sugieren que los estudiantes con mejores indicadores de salud mental presentan, en promedio, un rendimiento académico más elevado. Si bien el análisis no permite establecer causalidad, la tendencia observada refuerza la idea de que el bienestar psicológico constituye una dimensión relevante para el desarrollo de hábitos de estudio efectivos.
+```{r}
+tabla_coef_modelo_mental(StudentsHabits)
+tabla_metricas_modelo_mental(StudentsHabits)
+tabla_cor_spearman_mental(StudentsHabits)
+```
 
-## Ejercicio físico
+El gráfico de cajas muestra que los estudiantes con ratings de salud mental
+más altos tienden a tener puntajes más altos. Las cajas de la derecha
+del gráfico, que representan a los estudiantes con mejor salud mental,
+están ubicadas más arriba que las de la izquierda.
 
-> La actividad física regular parece asociarse con un mejor desempeño académico.
+La correlación de Spearman entre salud mental y puntaje es de **rho = 0.32**,
+con un p-valor menor a 0.001. Esto indica una relación positiva moderada:
+no tan fuerte como la de las horas de estudio, pero real y significativa.
+
+Hay que ser cuidadosos con la dirección de esta relación. Los datos muestran
+una asociación, pero no podemos saber con certeza si una mejor salud mental
+lleva a mejores notas, o si mejores notas llevan a una mejor salud mental,
+o si hay una tercera variable que explica ambas cosas. Probablemente las
+tres cosas ocurran en distintas proporciones para distintos estudiantes.
+
+## ¿La dieta y el ejercicio se relacionan con el rendimiento?
 
 ```{r}
 plot_ejercicio_dieta_vs_exam(StudentsHabits)
-
 ```
-
-La práctica de ejercicio físico muestra una relación positiva, aunque moderada, con los puntajes obtenidos en los exámenes. Los estudiantes que realizan actividad física con mayor frecuencia suelen presentar mejores resultados, posiblemente debido a beneficios indirectos vinculados con la salud, el descanso y la gestión del estrés.
-
-## Calidad de la dieta
-
-> Los hábitos alimenticios saludables se relacionan con mejores resultados académicos.
 
 ```{r}
-plot_diet_quality(StudentsHabits)
-
+tabla_coef_modelo_ejercicio(StudentsHabits)
+tabla_metricas_modelo_ejercicio(StudentsHabits)
 ```
 
-La comparación entre grupos indica que una alimentación de mejor calidad se asocia con puntajes más altos. Aunque las diferencias no son extremas, la tendencia observada sugiere que la nutrición puede desempeñar un papel importante en el rendimiento académico a través de su influencia sobre la energía, la concentración y el bienestar general.
+```{r}
+plot_diet_quality_vs_exam(StudentsHabits)
+```
 
-## Trabajo a tiempo parcial
+El análisis muestra que la frecuencia de ejercicio tiene un efecto positivo
+y estadísticamente significativo sobre el puntaje del examen. Los estudiantes
+que hacen ejercicio con más regularidad tienden a rendir mejor.
 
-> Compatibilizar estudio y trabajo puede representar un desafío para el rendimiento académico.
+La calidad de la dieta, en cambio, no muestra un efecto significativo por
+sí sola. Esto no significa que la alimentación no importe para la salud en
+general, sino que en este dataset su relación con el rendimiento académico
+no es directa ni fuerte.
+
+El gráfico que combina ejercicio y dieta es interesante porque permite ver
+que el efecto del ejercicio es bastante consistente independientemente de
+la calidad de la dieta. No se observa que combinar buena dieta con ejercicio
+regular produzca un beneficio adicional significativo sobre el rendimiento.
+
+Sin embargo, el R² del modelo es bajo (alrededor de 0.03), lo que indica
+que ejercicio y dieta juntos explican una pequeña proporción del rendimiento
+académico. Hay otros factores mucho más determinantes, como ya vimos.
+
+## ¿Trabajar a tiempo parcial afecta el rendimiento?
+
+Muchos estudiantes universitarios combinan el estudio con algún trabajo.
+Esta es una realidad muy común especialmente en Argentina, donde el costo
+de vida y las necesidades económicas llevan a muchos jóvenes a trabajar
+mientras estudian.
 
 ```{r}
 plot_trabajo_vs_exam(StudentsHabits)
-
 ```
 
-Los estudiantes que trabajan mientras estudian enfrentan demandas adicionales sobre su tiempo y recursos. Los resultados muestran diferencias en el desempeño entre quienes poseen un empleo y quienes no, lo que sugiere que la disponibilidad de tiempo para el estudio y el descanso puede influir en los resultados académicos obtenidos.
+```{r}
+tabla_ttest_trabajo(StudentsHabits)
+```
 
-## Una mirada general
+Sorprendentemente, el análisis no encontró diferencias estadísticamente
+significativas entre los estudiantes que trabajan y los que no trabajan.
+El p-valor del test T es de 0.39, muy por encima del umbral de 0.05 que
+usamos para declarar significancia estadística.
 
-> Ningún hábito explica por sí solo el rendimiento académico.
+Si bien los estudiantes sin trabajo tienen un promedio levemente superior,
+la diferencia es pequeña y no podemos afirmar con confianza que se deba
+al trabajo en sí y no a variaciones aleatorias entre los grupos.
 
-En conjunto, **los hallazgos muestran que el desempeño académico surge de la interacción entre múltiples dimensiones de la vida cotidiana**. Las horas de estudio aparecen como el factor más directamente asociado al puntaje obtenido, pero variables relacionadas con el bienestar físico y emocional —como el sueño, la actividad física, la alimentación y la salud mental— también presentan asociaciones relevantes. Estos resultados invitan a pensar el rendimiento académico como un fenómeno complejo, influido tanto por los hábitos de estudio como por las condiciones generales de vida de los estudiantes.
+Este resultado es llamativo pero no inexplicable. Quizás los estudiantes
+que trabajan desarrollan habilidades de gestión del tiempo que compensan
+el menor tiempo disponible para estudiar. O quizás la motivación que
+viene de la independencia económica tiene un efecto positivo sobre el
+compromiso con el estudio. Los datos no nos permiten saberlo con certeza,
+pero el resultado invita a cuestionar el supuesto de que trabajar
+necesariamente perjudica el rendimiento.
+
+## ¿La calidad de internet afecta el rendimiento?
+
+```{r}
+plot_internet_quality_vs_exam(StudentsHabits)
+```
+
+El gráfico muestra la distribución de puntajes según la calidad de la
+conexión a internet. Los estudiantes con mejor conexión tienden a tener
+puntajes levemente superiores, aunque las diferencias entre grupos no
+son muy pronunciadas.
+
+En un contexto donde cada vez más recursos educativos están en línea,
+la calidad del acceso a internet puede ser una variable de equidad
+importante. Un estudiante con mala conexión tiene menos acceso a materiales,
+clases grabadas y plataformas de estudio, lo que puede afectar su
+rendimiento de maneras que los datos no capturan del todo.
+
+## ¿El nivel educativo de los padres influye?
+
+```{r}
+tabla_parental_education(StudentsHabits)
+plot_parental_education_vs_exam(StudentsHabits)
+```
+
+El nivel educativo de los padres es una variable que en la literatura
+sociológica suele aparecer como un fuerte predictor del rendimiento
+académico, ya que está asociada al capital cultural del hogar: los
+libros disponibles, el vocabulario, la valoración del estudio, el
+tipo de apoyo que los padres pueden dar.
+
+En este dataset la relación existe pero no es tan pronunciada como
+en otros estudios. Esto puede deberse a las características específicas
+de la muestra o a que en el contexto universitario otros factores
+individuales, como las horas de estudio, pesan más que el origen familiar.

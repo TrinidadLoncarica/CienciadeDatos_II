@@ -1,0 +1,104 @@
+---
+title: "Contexto"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(gt)
+library(broom)
+source("R/tablas.R")
+source("R/traer_datos.R")
+source("R/graficos.R")
+StudentsHabits <- traer_datos()
+```
+
+# Marco conceptual
+
+## El rendimiento académico como fenómeno complejo
+
+El rendimiento académico es uno de los temas más estudiados en la psicología
+educativa y en las ciencias de la educación. Durante décadas, los
+investigadores intentaron identificar qué factores explican por qué algunos
+estudiantes aprenden más y mejor que otros.
+
+Las primeras aproximaciones se centraron en variables cognitivas: la
+inteligencia, la memoria, la capacidad de abstracción. Pero con el tiempo
+quedó claro que esos factores, aunque importantes, no explicaban todo.
+Dos estudiantes con capacidades similares podían tener rendimientos muy
+distintos dependiendo de su entorno, sus hábitos y su estado emocional.
+
+Hoy existe un consenso amplio en la literatura: el rendimiento académico
+es un fenómeno *multidimensional*. No hay una sola causa, sino una
+combinación de factores que interactúan entre sí.
+
+## Los hábitos como variable clave
+
+Dentro de ese conjunto de factores, los hábitos ocupan un lugar especial.
+A diferencia de las capacidades cognitivas o del nivel socioeconómico, que
+son difíciles de modificar a corto plazo, los hábitos son conductas
+aprendidas que pueden cambiarse con esfuerzo y consciencia.
+
+Algunos de los hábitos más estudiados en relación al rendimiento académico son:
+
+**Las horas de estudio.** Este es quizás el factor más intuitivo y también
+el más consistentemente respaldado por la evidencia. Los estudiantes que
+dedican más tiempo al estudio tienden a obtener mejores resultados. Sin
+embargo, no solo importa la cantidad sino también la calidad: estudiar
+de forma activa y concentrada es más efectivo que hacerlo de manera
+dispersa.
+
+**El sueño.** La relación entre sueño y aprendizaje está bien documentada.
+Durante el sueño, el cerebro consolida los recuerdos y procesa la
+información aprendida durante el día. La privación de sueño, por el
+contrario, afecta la concentración, la memoria y la capacidad de resolver
+problemas.
+
+**La actividad física.** El ejercicio regular está asociado a mejoras en
+la función cognitiva, la memoria y el estado de ánimo. Aunque el mecanismo
+no está del todo claro, hay evidencia de que los estudiantes que hacen
+ejercicio con regularidad tienden a rendir mejor académicamente.
+
+**La salud mental.** El estrés, la ansiedad y la depresión son obstáculos
+significativos para el aprendizaje. Un estudiante que está emocionalmente
+bien tiene más recursos cognitivos disponibles para estudiar y rendir.
+
+**El uso de tecnología y redes sociales.** Este es un factor relativamente
+nuevo en la literatura, pero cada vez más relevante. El uso excesivo de
+redes sociales y plataformas de entretenimiento puede interferir con el
+tiempo de estudio y la calidad del sueño, generando un efecto negativo
+en cadena sobre el rendimiento.
+
+## El contexto universitario
+
+Los estudiantes universitarios enfrentan desafíos particulares. A diferencia
+de la escuela secundaria, la universidad exige un alto nivel de
+autorregulación: nadie controla si el estudiante asiste a clases, estudia
+o duerme bien. Esta libertad puede ser un factor de riesgo para aquellos
+que no han desarrollado hábitos sólidos.
+
+Además, muchos estudiantes universitarios combinan el estudio con trabajos
+a tiempo parcial, lo que reduce el tiempo disponible para estudiar y
+descansar. Otros atraviesan por primera vez situaciones de estrés académico
+intenso, lejos de sus redes de apoyo familiares.
+
+Todo esto hace que el período universitario sea un momento especialmente
+relevante para estudiar la relación entre hábitos y rendimiento.
+
+## ¿Por qué analizar datos?
+
+Frente a preguntas complejas como estas, el análisis estadístico ofrece
+una herramienta poderosa: permite separar la señal del ruido, identificar
+patrones que no son visibles a simple vista y cuantificar el peso relativo
+de cada factor.
+
+Cuando decimos, por ejemplo, que las horas de estudio tienen una correlación
+de 0.82 con el puntaje del examen, estamos diciendo algo muy preciso: que
+conociendo las horas de estudio de un estudiante podemos predecir bastante
+bien su puntaje. Eso es mucho más informativo que simplemente decir
+"estudiar más ayuda a rendir mejor".
+
+El análisis de datos no reemplaza la comprensión profunda del fenómeno,
+pero la complementa. Por eso este trabajo combina los resultados estadísticos
+con una lectura interpretativa que intenta darles sentido en el contexto
+de lo que ya sabemos sobre educación y hábitos.

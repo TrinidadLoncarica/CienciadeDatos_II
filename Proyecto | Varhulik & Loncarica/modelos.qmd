@@ -1,0 +1,105 @@
+---
+title: "Modelos"
+format: html
+---
+```{r}
+library(tidyverse)
+library(gt)
+library(broom)
+source("R/tablas.R")
+source("R/traer_datos.R")
+source("R/graficos.R")
+StudentsHabits <- traer_datos()
+```
+
+#Los modelos estadísticos
+
+## ¿Qué es un modelo de regresión?
+
+Hasta ahora analizamos cada variable por separado, una a la vez.
+Pero la realidad es más compleja: los hábitos no actúan de forma aislada.
+Un estudiante que estudia mucho pero duerme poco está en una situación
+muy distinta a uno que estudia mucho y además descansa bien. Para capturar
+esa complejidad necesitamos un modelo que considere todas las variables
+al mismo tiempo.
+
+Un modelo de regresión lineal múltiple hace exactamente eso. Toma varias
+variables predictoras y estima el efecto de cada una sobre la variable
+dependiente, *manteniendo constantes las demás*. Esto es muy valioso porque
+nos permite responder preguntas como: ¿cuánto agrega una hora más de estudio
+al puntaje, si todo lo demás permanece igual?
+
+## El modelo múltiple
+
+```{r}
+source("R/tablas.R")
+tabla_coef_modelo_multiple(StudentsHabits)
+```
+
+```{r}
+tabla_metricas_modelo_multiple(StudentsHabits)
+```
+
+```{r}
+tabla_residuos_modelo_multiple(StudentsHabits)
+```
+
+La tabla de coeficientes muestra el efecto estimado de cada variable
+sobre el puntaje del examen. Los coeficientes positivos indican que
+la variable se asocia con puntajes más altos; los negativos, con
+puntajes más bajos.
+
+El R² del modelo indica qué proporción de la variabilidad en los puntajes
+puede explicarse con las variables incluidas. Un R² alto significa que
+el modelo captura bien las diferencias entre estudiantes; un R² bajo
+significa que hay factores importantes que el modelo no está considerando.
+
+Las variables con mayor peso en el modelo son, como era de esperarse,
+las horas de estudio y la asistencia a clases, seguidas por el sueño
+y la salud mental. Las redes sociales aparecen con un coeficiente negativo,
+confirmando el efecto perjudicial observado en el análisis bivariado.
+
+## El modelo con interacciones
+
+```{r}
+tabla_coef_modelo_interacciones(StudentsHabits)
+tabla_metricas_modelo_interacciones(StudentsHabits)
+```
+
+```{r}
+tabla_modelo_interacciones(StudentsHabits)
+```
+
+Un modelo con interacciones va un paso más allá. En lugar de asumir
+que el efecto de cada variable es siempre el mismo independientemente
+del contexto, permite que el efecto de una variable dependa del valor
+de otra.
+
+Por ejemplo, la interacción entre horas de estudio y sueño nos permite
+preguntar: ¿el efecto positivo del estudio es mayor cuando el estudiante
+también duerme bien? La respuesta que dan los datos es sí: las horas de
+estudio tienen un mayor impacto sobre el rendimiento cuando van acompañadas
+de un buen descanso.
+
+De la misma forma, la interacción entre redes sociales y sueño sugiere
+que el efecto negativo de las redes sociales es más pronunciado cuando
+el estudiante ya duerme poco, posiblemente porque el tiempo en redes
+sustituye horas de sueño que el estudiante ya tiene escasas.
+
+Estas interacciones pintan un cuadro más matizado: los hábitos no actúan
+como factores independientes sino como elementos de un sistema. El
+bienestar académico emerge de la combinación adecuada de varios hábitos,
+no de la optimización de uno solo.
+
+## ¿Qué tan bueno es el modelo?
+
+Ningún modelo estadístico es perfecto. El rendimiento académico es un
+fenómeno humano complejo que involucra factores que los datos no pueden
+capturar del todo: la motivación profunda del estudiante, la calidad
+de los docentes, el apoyo de la familia, las circunstancias de vida
+particulares.
+
+Lo que el modelo sí hace es identificar los patrones más sistemáticos
+y cuantificar su peso relativo. Eso ya es mucho: nos dice dónde buscar
+si queremos entender por qué algunos estudiantes rinden más que otros,
+y nos sugiere dónde intervenir si queremos mejorar ese rendimiento.

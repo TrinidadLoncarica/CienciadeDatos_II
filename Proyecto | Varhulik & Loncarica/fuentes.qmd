@@ -1,26 +1,38 @@
-# Fuentes y metodología
+# Fuentes y referencias
 
 ## Dataset
 
-El análisis se realizó a partir del dataset **Student Habits Performance**, que reúne información sobre hábitos cotidianos de estudiantes y su relación con el rendimiento académico.
+El análisis se basa en el dataset *Student Habits Performance*, disponible
+en plataformas de datos abiertos. El dataset contiene información sobre
+hábitos cotidianos y rendimiento académico de estudiantes universitarios.
 
-## Variables utilizadas
+## Herramientas utilizadas
 
-Se trabajó con variables vinculadas a:
+El análisis fue realizado íntegramente en **R**, un lenguaje de programación
+estadística de código abierto. Las principales librerías utilizadas fueron:
 
-- Horas de estudio
-- Uso de redes sociales
-- Horas de sueño
-- Salud mental
-- Ejercicio físico
-- Calidad de la dieta
-- Trabajo a tiempo parcial
-- Puntaje obtenido en examen
+- `tidyverse`: para manipulación y transformación de datos
+- `ggplot2`: para visualizaciones estadísticas
+- `gt`: para tablas formateadas
+- `broom`: para organizar los resultados de modelos estadísticos
+- `knitr`: para la generación del documento
 
-## Herramientas
+El libro fue compilado con **Quarto**, un sistema de publicación científica
+y técnica de código abierto.
 
-El procesamiento y la visualización de los datos se realizaron con **R**, utilizando principalmente las librerías `tidyverse`, `gt` y `broom`.
+## Referencias conceptuales
 
-## Alcance del análisis
+Los conceptos teóricos mencionados en el marco conceptual se basan en
+literatura general sobre psicología educativa, neurociencia del aprendizaje
+y sociología de la educación. Entre los temas relevantes se encuentran:
 
-Este trabajo tiene un carácter exploratorio. Los resultados permiten identificar asociaciones entre variables, pero no establecer relaciones causales definitivas.
+- Teorías sobre autorregulación del aprendizaje
+- Investigación sobre sueño y consolidación de memoria
+- Estudios sobre el impacto de las redes sociales en el rendimiento académico
+- Literatura sobre capital cultural y desigualdad educativa
+
+## Sobre las autoras
+
+**Melina Ayelen Varhulik** y **María Trinidad Loncarica** son estudiantes
+de la Universidad Nacional de San Martín. Este trabajo fue realizado en
+el marco de la materia Ciencia de Datos II durante el primer semestre de 2026.
